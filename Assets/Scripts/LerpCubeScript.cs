@@ -18,6 +18,9 @@ public class LerpCubeScript : MonoBehaviour {
     {
         float t = 0;
 
+        System.Diagnostics.Stopwatch stopWatch = new System.Diagnostics.Stopwatch();
+        stopWatch.Start();
+
         while (t < 1)
         {
             t += Time.deltaTime;
@@ -29,6 +32,10 @@ public class LerpCubeScript : MonoBehaviour {
             }
             yield return null;
         }
+
+        stopWatch.Stop();
+
+        Debug.Log("Lerp took: " + stopWatch.Elapsed);
     }
 
     //inseert code here:
